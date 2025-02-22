@@ -68,7 +68,7 @@ export default function BubbleSort() {
             }`}
             initial={{ height: value * 2 }}
             animate={{ height: value * 2 }}
-            transition={{ type: "spring", stiffness: 150 }}
+            transition={{ type: "spring", stiffness: 300, damping: 20 }}
           >
             <p className="text-xs text-center text-white">{value}</p>
           </motion.div>

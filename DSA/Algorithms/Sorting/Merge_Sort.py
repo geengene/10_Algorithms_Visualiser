@@ -1,19 +1,20 @@
 # Merge Sort uses the Divide and Conquer approach. It involves breaking up the array from the middle until
-#Arrays of only 1 elements remain and thein merging them back up in a sorted order.
-#Time complexity is O(nlog N) and space complexity is O(n)
+# Arrays of only 1 elements remain and thein merging them back up in a sorted order.
+# Time complexity is O(nlog N) and space complexity is O(n)
 
 count = 0
+
 
 def merge_sort(array):
     if len(array) == 1:
         return array
     else:
-        mid = len(array)//2
+        mid = len(array) // 2
         left_array = array[:mid]
         right_array = array[mid:]
-        print(f'Left : {left_array}')
-        print(f'Right : {right_array}')
-        return merge(merge_sort(left_array),merge_sort(right_array))
+        print(f"Left : {left_array}")
+        print(f"Right : {right_array}")
+        return merge(merge_sort(left_array), merge_sort(right_array))
 
 
 def merge(left, right):
@@ -22,7 +23,7 @@ def merge(left, right):
     left_index = 0
     right_index = 0
     sorted_array = []
-    while (left_index < l and right_index < r):
+    while left_index < l and right_index < r:
         global count
         count += 1
         if left[left_index] < right[right_index]:
@@ -35,11 +36,10 @@ def merge(left, right):
     return sorted_array + left[left_index:] + right[right_index:]
 
 
-
-array = [5,9,3,10,45,2,0]
+array = [5, 9, 3, 10, 45, 2, 0]
 print(merge_sort(array))
-print(f'Number of comparisons = {count}')
-'''
+print(f"Number of comparisons = {count}")
+"""
 Left : [5, 9, 3]
 Right : [10, 45, 2, 0]
 Left : [5]
@@ -60,12 +60,12 @@ Right : [0]
 [0, 2, 3, 5, 9, 10, 45]
 [0, 2, 3, 5, 9, 10, 45]
 Number of comparisons = 12
-'''
+"""
 
-sorted_array = [5,6,7,8,9]
+sorted_array = [5, 6, 7, 8, 9]
 print(merge_sort(sorted_array))
-print(f'Number of comparisons = {count}')
-'''
+print(f"Number of comparisons = {count}")
+"""
 Left : [5, 6]
 Right : [7, 8, 9]
 Left : [5]
@@ -80,12 +80,33 @@ Right : [9]
 [5, 6, 7, 8, 9]
 [5, 6, 7, 8, 9]
 Number of comparisons = 5
-'''
+"""
 
-reverse_sorted_array = [9,8,7,6,5,4,3,2,1,0,-1,-2,-3,-4,-5,-6,-7,-8,-9,-10]
+reverse_sorted_array = [
+    9,
+    8,
+    7,
+    6,
+    5,
+    4,
+    3,
+    2,
+    1,
+    0,
+    -1,
+    -2,
+    -3,
+    -4,
+    -5,
+    -6,
+    -7,
+    -8,
+    -9,
+    -10,
+]
 print(merge_sort(reverse_sorted_array))
-print(f'Number of comparisons = {count}')
-'''
+print(f"Number of comparisons = {count}")
+"""
 Left : [9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
 Right : [-1, -2, -3, -4, -5, -6, -7, -8, -9, -10]
 
@@ -184,9 +205,10 @@ Right : [-10]
 [-10, -9, -8, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
 Number of comparisons = 48
-'''
+"""
 
-def merge_sort(a_list):
+
+def merge_sort_v2(a_list):
     print("Splitting", a_list)
     if len(a_list) > 1:
         mid = len(a_list) // 2
@@ -219,5 +241,5 @@ def merge_sort(a_list):
 
 
 a_list = [54, 26, 93, 17, 77, 31, 44, 55, 20]
-merge_sort(a_list)
+merge_sort_v2(a_list)
 print(a_list)
