@@ -1,4 +1,4 @@
-import BubbleSort from "./components/sorting";
+import BubbleSort from "./components/BubbleSort";
 
 function App() {
   return (
